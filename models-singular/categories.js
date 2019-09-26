@@ -16,7 +16,7 @@ class Categories {
     // If 1, return it as a plain object
     // If 2, return it as an object like this:
     // { count: ##, results: [{}, {}] }
-    console.log(this.find());
+    console.log(mongoose.find());
   }
 
   create(record) {
