@@ -1,11 +1,9 @@
 language: node_js
 node_js:
-  - "9"
-
-script:
-  - npm test
-  - npm run lint
-
+  - "stable"
 branches:
   only:
     - master
+script:
+  - npm run lint
+  - npm test
