@@ -7,8 +7,6 @@ require('../supergoose.js');
 
 describe('Categories Model (Singular)', () => {
 
-  // How will you handle both the happy path and edge cases in these tests?
-
   it('can create() a new category', () => {
     let test = { name: 'Test', description: 'Description' };
     return categories.create(test).then(result => {
