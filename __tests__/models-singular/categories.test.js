@@ -49,5 +49,4 @@ describe('Categories Model (Singular)', () => {
       });
     });
   });
-
 });

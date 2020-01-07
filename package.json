@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node .",
     "test": "jest --verbose",
-    "test-watch": "jest --watchAll --verbose"
+    "test-watch": "jest --watchAll --verbose",
+    "lint": "eslint ."
   },
   "jest": {
     "testEnvironment": "node"
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint": "^6.8.0",
     "jest": "^24.8.0",
     "mongodb-memory-server": "^5.1.5",
     "mongoose": "^5.8.1",
