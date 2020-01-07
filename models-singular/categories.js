@@ -4,6 +4,8 @@
 // How do we get it in here so we can run methods on it?
 
 const schema = require('../models-singular/categories-schema');
+const mongoose = require('mongoose');
+let Category = mongoose.model('Category', schema);
 
 class Categories {
   constructor(schema) {
@@ -11,24 +13,23 @@ class Categories {
   }
 
   get(_id) {
-    // Call the appropriate mongoose method to get
-    // one or more records
-    // If 1, return it as a plain object
-    // If 2, return it as an object like this:
-    // { count: ##, results: [{}, {}] }
-    console.log(this.find());
+    if(_id) {
+      return Category.find({ _id : _id });
+    }
+    return Category.find({});
   }
 
   create(record) {
-    // Call the appropriate mongoose method to create a new record
+    let newCategory = new Category(record);
+    return newCategory.save();
   }
 
   update(_id, record) {
-    // Call the appropriate mongoose method to update a record
+    return Category.updateOne({_id : _id}, record);
   }
 
   delete(_id) {
-    // Call the appropriate mongoose method to delete a record
+    return Category.deleteOne({_id : _id});
   }
 
 }
