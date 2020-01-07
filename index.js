@@ -13,9 +13,21 @@ const MONGOOSE_URI = 'mongodb://localhost:27017/test';
 
 // Connect
 mongoose.connect(MONGOOSE_URI, {useNewUrlParser: true, useUnifiedTopology: true});
-let model = mongoose.model('Categories', schema);
 // Do some work
-//console.log(categories);
-categories.get();
+categories.create({ name: 'Boots', description: 'For wearing on your feet' })
+  .then(
+    categories.get()
+      .then(data => {
+        categories.update(data[0]._id, {name: 'Shoes'})
+          .then(result => {
+            console.log(result);
+            categories.delete(data[0]._id)
+              .then(result => {
+                console.log(result);
+                mongoose.disconnect();
+              });
+          });
+      }));
+
 // Disconnect
-mongoose.disconnect();
+//mongoose.disconnect();

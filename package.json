@@ -4,6 +4,7 @@
   "description": "",
   "main": "players-schema.js",
   "scripts": {
+    "start": "node .",
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose"
   },
@@ -16,7 +17,7 @@
   "dependencies": {
     "jest": "^24.8.0",
     "mongodb-memory-server": "^5.1.5",
-    "mongoose": "^5.6.1",
+    "mongoose": "^5.8.1",
     "supertest": "^4.0.2"
   }
 }
